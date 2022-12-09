@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    box-sizing: border-box;
+}
+
+.cabecalho {
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.75rem;
+    color: ivory;
+}
+
+.cabecalho__menu {
+    width: 12%;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__item{
+    list-style: none;
+    margin-left: 0 8px;
+}
+
+
+.menu__link {
+    display: inline-block;
+    color: ivory;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+}
+
+.sports, .economia, .entreterimento, .tecnologia {
+    width: 100%;
+    padding: 1.75rem;
+}
+
+.sports{
+    background-color: darkseagreen;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sports__titulo, .economia__titulo, .entreterimento__titul, .tecnologia__titulo {
+    padding: 2rem 0;
+}
+
+.artigos{
+    width: 30%;
+    margin-bottom: 1.75rem;
+}
+
+.artigos__titulo{
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.artigos__texto{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 8px 0;
+}
+
+.imagem {
+    height: 180px;
+}
+
+.artigos__link {
+    background-color: brown;
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 5px;
+    color: ivory;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.artigos__link-sports{
+    background-color: darkgreen;
+}
+
+.economia {
+    background-color:  rgb(251, 251, 122);
+}
+
+.artigos__link-economia{
+    background-color: goldenrod ;
+}
+
+.entreterimento {
+    background-color: rgb(255, 203, 168);
+}
+
+.artigos__link-entreterimento{
+    background-color: rgb(182, 122, 82);
+}
+
+.tecnologia {
+    background-color: rgb(255, 168, 168);
+}
+
+.artigos__link-tecnologia{
+    background-color: rgb(198, 96, 96);
+}
