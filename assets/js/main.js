@@ -1,35 +1,54 @@
-import verificaMaior from "./verificacao.js"
-import enviaMensagem from "./enviaMensagem.js"
-import remoNotificacao from "./removeNotificacao.js"
+$(document).ready(function () {
 
 
-const inputA = document.querySelector('#A')
-const inputB = document.querySelector('#B')
-const botao = document.querySelector('[data-botao]')
-const notificacao = document.querySelector('.container__notificacao')
+    $("[data-formulario]").submit(function (event) {
+        event.preventDefault();
 
-//removendo notificação
-inputB.addEventListener('click', () => {
-    remoNotificacao(notificacao)
-})
-inputA.addEventListener('click', () => {
-    remoNotificacao(notificacao)
-})
+        const inputTarefa = $("[data-input]").val()
 
+        // Cria item
+        let item = $(`  <li class="d-flex align-items-center w-100 border-bottom border-success">
+                            <p class="text-start w-75 h-100 mb-0 fs-5">${inputTarefa}</p>
+                        </li>`
+        )
 
-//Validando formulário e notificando usuário
-botao.addEventListener('click', (e) => {
+        // Botão tarefa concluída
+        const botaoConcluir = $("<button/>", {
+            "class": "btn btn-outline-warning",
+            type: "button",
+            text: "Concluir",
+            click: function (event) {
 
-    e.preventDefault()
+                let botaoConcluir =  $(event.target)
 
-    //convertendo em inteiro
-    const valorA = parseInt(inputA.value)
-    const valorB = parseInt(inputB.value)
+                // deixa bota amarelo
+                $(botaoConcluir).toggleClass("btn-warning btn-outline-warning")
 
-    //verificando se B é maior que A
-    const ehMaior = verificaMaior(valorA, valorB)
+                // Adiciona risco ao texto
+                let texto = $(botaoConcluir).parent().children().get(0);
+                $(texto).toggleClass("text-decoration-line-through btn-warning")
+            }
+        })
 
-    //inserindo notificação
-    enviaMensagem(ehMaior, notificacao)
+        // Botão deletar tarefa
+        const botaoDeletar = $("<button/>", {
+            "class": "btn btn-outline-danger m-lg-2",
+            text: "Deletar",
+            click: function (event) {
+                
+                $(event.target).parent().remove()
+            }
+        })
 
-})
+        // Adiciona botão concluir
+        botaoConcluir.appendTo(item)
+
+        // Adiciona botão deletar
+        botaoDeletar.appendTo(item)
+
+        // Adiciona item a lista
+        item.appendTo("[data-listaDeTarefas]")
+        $("[data-input]").val("")
+        
+    });
+});
