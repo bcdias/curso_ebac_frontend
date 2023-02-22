@@ -54,6 +54,4 @@ $(document).ready(function () {
         placeholder: '00000-000'
     })
 
-// validações
-
 });
