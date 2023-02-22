@@ -1,54 +1,59 @@
+
+
 $(document).ready(function () {
 
+// dados
+    const uf = [
+        { uf: 'AC', estado: 'Acre' },
+        { uf: 'AL', estado: 'Alagoas' },
+        { uf: 'AP', estado: 'Amapá' },
+        { uf: 'AM', estado: 'Amazonas' },
+        { uf: 'BA', estado: 'Bahia' },
+        { uf: 'CE', estado: 'Ceará' },
+        { uf: 'DF', estado: 'Distrito Federal' },
+        { uf: 'ES', estado: 'Espírito Santo' },
+        { uf: 'GO', estado: 'Goiás' },
+        { uf: 'MA', estado: 'Maranhão' },
+        { uf: 'MT', estado: 'Mato Grosso' },
+        { uf: 'MS', estado: 'Mato Grosso do Sul' },
+        { uf: 'MG', estado: 'Minas Gerais' },
+        { uf: 'PA', estado: 'Pará' },
+        { uf: 'PB', estado: 'Paraíba' },
+        { uf: 'PR', estado: 'Paraná' },
+        { uf: 'PE', estado: 'Pernambuco' },
+        { uf: 'PI', estado: 'Piauí' },
+        { uf: 'RJ', estado: 'Rio de Janeiro' },
+        { uf: 'RN', estado: 'Rio Grande do Norte' },
+        { uf: 'RS', estado: 'Rio Grande do Sul' },
+        { uf: 'RO', estado: 'Rondônia' },
+        { uf: 'RR', estado: 'Roraima' },
+        { uf: 'SC', estado: 'Santa Catarina' },
+        { uf: 'SP', estado: 'São Paulo' },
+        { uf: 'SE', estado: 'Sergipe' },
+        { uf: 'TO', estado: 'Tocantins' }
+    ]
 
-    $("[data-formulario]").submit(function (event) {
-        event.preventDefault();
+// mascaras
+    uf.forEach(estado => {
+        $('#uf').append(`<option value=${estado.estado}>${estado.uf}</option>`)
+    })
 
-        const inputTarefa = $("[data-input]").val()
+    $('#nascimento').mask('00/00/0000', {
+        placeholder: '__/__/____'
+    })
+    $('#cpf').mask('0000.000.000-00', {
+        placeholder: '000.000.000-00'
+    })
 
-        // Cria item
-        let item = $(`  <li class="d-flex align-items-center w-100 border-bottom border-success">
-                            <p class="text-start w-75 h-100 mb-0 fs-5">${inputTarefa}</p>
-                        </li>`
-        )
+    $('#telefone').mask('(00) 00000-0000', {
+        placeholder: '(00) 00000-0000'
+    })
 
-        // Botão tarefa concluída
-        const botaoConcluir = $("<button/>", {
-            "class": "btn btn-outline-warning",
-            type: "button",
-            text: "Concluir",
-            click: function (event) {
 
-                let botaoConcluir =  $(event.target)
+    $('#cep').mask('00000-000', {
+        placeholder: '00000-000'
+    })
 
-                // deixa bota amarelo
-                $(botaoConcluir).toggleClass("btn-warning btn-outline-warning")
+// validações
 
-                // Adiciona risco ao texto
-                let texto = $(botaoConcluir).parent().children().get(0);
-                $(texto).toggleClass("text-decoration-line-through btn-warning")
-            }
-        })
-
-        // Botão deletar tarefa
-        const botaoDeletar = $("<button/>", {
-            "class": "btn btn-outline-danger m-lg-2",
-            text: "Deletar",
-            click: function (event) {
-                
-                $(event.target).parent().remove()
-            }
-        })
-
-        // Adiciona botão concluir
-        botaoConcluir.appendTo(item)
-
-        // Adiciona botão deletar
-        botaoDeletar.appendTo(item)
-
-        // Adiciona item a lista
-        item.appendTo("[data-listaDeTarefas]")
-        $("[data-input]").val("")
-        
-    });
 });
