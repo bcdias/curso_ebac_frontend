@@ -25,24 +25,20 @@ header {
   top: 0;
   left: 0;
 }
-
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
 }
-
-.menu {
+header .container .menu {
   display: flex;
 }
-
-.menu li {
+header .container .menu li {
   font-weight: bold;
   margin-left: 24px;
 }
-
-.menu li a {
+header .container .menu li a {
   color: #fff;
   text-decoration: none;
 }
@@ -50,8 +46,7 @@ header .container {
 section {
   padding: 56px 0;
 }
-
-.products {
+section .products {
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 32.66%);
@@ -59,13 +54,11 @@ section {
   row-gap: 4%;
   width: 100%;
 }
-
-.product-item img {
+section .products .product-item img {
   width: 100%;
   border-radius: 16px;
 }
-
-.product-button {
+section .products .product-item .product-button {
   display: block;
   background-color: #44bd32;
   color: #fff;
@@ -75,8 +68,7 @@ section {
   margin-top: 8px;
   text-decoration: none;
 }
-
-.product-button:hover {
+section .products .product-item .product-button:hover {
   background-color: #62d151;
 }
 

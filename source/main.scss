@@ -1,7 +1,7 @@
 @use './config/reset';
 @use './config/variaveis';
 
-// Globais
+// Globaisclear
 body {
     background-color: variaveis.$corDeFUndo;
 }
@@ -60,9 +60,11 @@ section {
         row-gap: 4%;
         width: 100%;
 
-        .product-item img {
-            width: 100%;
-            border-radius: 16px;
+        .product-item {
+            img {
+                width: 100%;
+                border-radius: 16px;
+            }
 
             .product-button {
                 display: block;
