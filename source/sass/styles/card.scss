@@ -1,0 +1,54 @@
+@mixin cardsConfig ($position) {
+    width: 100%;
+    height: 100%;
+    position: $position;
+}
+
+@mixin elementSize($width: 300px, $height: 200px) {
+    width: $width;
+    height: $height;
+}
+
+.card-container {
+    @include elementSize();
+    perspective: 1000px;
+
+    &:hover{
+        transform: scale(0.98);
+    }
+
+    .card-fliper {
+        @include cardsConfig(relative);
+        cursor: pointer;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+
+        .card-front {
+            @include cardsConfig(absolute);
+            backface-visibility: hidden;
+
+
+            img {
+                @include elementSize();
+            }
+        }
+
+        .card-back {
+            @include cardsConfig(absolute);
+
+            background-color: white;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            padding: 8px;
+
+            p {
+                line-height: 1.75rem;
+            }
+        }
+    }
+
+}
+
+.fliper {
+    transform: rotateY(180deg);
+}
