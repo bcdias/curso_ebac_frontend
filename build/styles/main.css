@@ -10,6 +10,9 @@ body {
 li {
   list-style: none;
 }
+.elementSize {
+  width: 100%;
+}
 .container {
   max-width: 1024px;
   width: 100%;
@@ -41,7 +44,7 @@ header .container {
 section {
   padding: 56px 0;
 }
-section .products {
+.products {
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 32.66%);
@@ -49,11 +52,11 @@ section .products {
   row-gap: 4%;
   width: 100%;
 }
-section .products .product-item img {
+.products .product-item img {
   width: 100%;
   border-radius: 16px;
 }
-section .products .product-item .product-button {
+.products .product-button {
   display: block;
   background-color: #44bd32;
   color: #fff;
@@ -63,7 +66,7 @@ section .products .product-item .product-button {
   margin-top: 8px;
   text-decoration: none;
 }
-section .products .product-item .product-button:hover {
+.products .product-button:hover {
   background-color: #4cd137;
 }
 @media (max-width: 1023px) {

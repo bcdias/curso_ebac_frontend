@@ -1,10 +1,9 @@
-
 @import "./rest.less";
 @import "./scapes.less";
 @import "./colors.less";
 
-.elementSize (@width: 100%;) {
-    width: @width;
+.elementSize {
+    width: 100%;
 }
 
 
@@ -19,7 +18,7 @@ header {
     position: sticky;
     top: 0;
     left: 0;
-    
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -31,11 +30,11 @@ header {
 
 .menu {
     display: flex;
-    
+
     li {
         font-weight: bold;
         margin-left: 24px;
-        
+
         a {
             color: #colors[texColor];
             text-decoration: none;
@@ -46,38 +45,34 @@ header {
 
 section {
     padding: 56px 0;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    .elementSize();
     
-    .products {
-        margin-top: 40px;
-        display: grid;
-        grid-template-columns: repeat(3, 32.66%);
-        column-gap: 1%;
-        row-gap: 4%;
+    .product-item img {
         .elementSize();
-        
-        .product-item{
+        border-radius: 16px;
+    }
 
-            img {
-                .elementSize();
-                border-radius: 16px;
-            }
-
-            .product-button {
-                display: block;
-                background-color: #colors[buttonColor];
-                color: #colors[texColor];
-                text-align: center;
-                padding: 8px 0;
-                border-radius: 8px;
-                margin-top: 8px;
-                text-decoration: none;
-            
-                &:hover {
-                    background-color: #colors[buttonHoverColor];
-                }
-            }
+    .product-button {
+        display: block;
+        background-color: #colors[buttonColor];
+        color: #colors[texColor];
+        text-align: center;
+        padding: 8px 0;
+        border-radius: 8px;
+        margin-top: 8px;
+        text-decoration: none;
+    
+        &:hover {
+            background-color: #colors[buttonHoverColor];
         }
-        
     }
 }
 
@@ -98,7 +93,7 @@ section {
         display: block;
     }
 
-    .product-item  {
+    .product-item {
         margin-bottom: 32px;
     }
 }
