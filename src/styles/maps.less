@@ -1,0 +1,47 @@
+.fontConfig(@color: #000, @size: 16px, @weight: 400){
+    color: @color;
+    size: @size;
+    weight: @weight;
+}
+
+#fonts(){
+
+    .primary() {
+        family: 'Raleway', sans-serif;
+        .fontConfig()
+    }
+    
+    .primaryTitles() {
+        .fontConfig(#000, 24px, 700)
+    }
+
+    .secondaryTitle() {
+        .fontConfig(#000, 22px, 500)
+    }
+
+    .label() {
+        .fontConfig(#a2a2a2)
+    }
+
+    .productName() {
+        .fontConfig(#464646, 14px, 500);        
+    }
+
+    .productPrice() {
+        .fontConfig(#000, 16px, 700);        
+    }
+}
+
+
+#colors(){
+    .bgPrimary() {
+        color: #e5e5e5;
+    }
+
+    .buttonColors() {
+        background: #2a7ae4;
+        backgroundHover: #2e86fa;
+        text: #fff;
+    }
+
+}

@@ -1,0 +1,159 @@
+@import './rest.less';
+@import './maps.less';
+@import './breakpoints.less';
+
+.inputConfig {
+    border: none;
+    outline: none;
+}
+
+.subTitle {
+    margin-bottom: 16px;
+    font-size: #fonts.secondaryTitle[size];
+    font-weight: #fonts.secondaryTitle[weight];
+}
+
+// Global
+body {
+    font-family: #fonts.primary[family];
+    font-size: #fonts.primary[size];
+    font-weight: #fonts.primary[weight];
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+
+    @media @min540 {
+        max-width: 500px;
+    }
+
+    @media @min768 {
+        max-width: 620px;
+    }
+    
+    @media @min1024 {
+        max-width: 940px;
+    }
+}
+
+
+header {
+    padding: 16px 0;
+
+    .title {
+        font-size: #fonts.primaryTitles[size];
+        font-weight: #fonts.primaryTitles[weight];
+        text-align: center;
+    }
+}
+
+main {
+    background-color: #colors.bgPrimary[color];
+    width: 100vw;
+}
+
+
+// cadastro de produtos
+
+.product-register {
+    width: 100%;
+
+    .container {
+        padding-top: 16px;
+
+        .section-title {
+            .subTitle();
+        }
+
+        .form {
+            .input-container {
+                background-color: #ffff;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 16px;
+                padding: 8px 12px;
+
+                label {
+                    margin-bottom: 4px;
+                    color: #fonts.label[color];
+                }
+
+                input {
+                    .inputConfig();
+                }
+
+                textarea {
+                    .inputConfig();
+                    resize: none;
+                }
+            }
+
+            button {
+                width: 100%;
+                border: none;
+                background-color: #colors.buttonColors[background];
+                color: #colors.buttonColors[text];
+                padding: 12px 0;
+
+                &:hover {
+                    background-color: #colors.buttonColors[backgroundHover];
+                }
+
+                &:active{
+                    scale: .99;
+                }
+            }
+        }
+    }
+}
+
+// lista de produtos
+
+.product-view {
+    padding-top: 32px;
+    .container {
+        .section-title {
+            .subTitle();
+        }
+        .product-container{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .product{
+                border: 2px solid #fff;
+                border-top: none;
+                border-radius: 0 0 10px 10px;
+                margin-bottom: 16px;
+                max-width: 300px;
+                width: 100%;
+            
+                
+                &-img{
+                    width: 100%;
+                }
+                
+                &-name{
+                    color: #fonts.productName[color];
+                    font-size: #fonts.productName[size];
+                    font-weight: #fonts.productName[weight];
+                    margin: 8px;
+                }
+
+                &-price{
+                    color: #fonts.productPrice[color];
+                    font-size: #fonts.productPrice[size];
+                    font-weight: #fonts.productPrice[weight];
+                    padding-left: 8px;
+                }
+
+                &-description{
+                    line-height: 22px;
+                    margin: 8px;
+                }
+            }
+        }
+    }
+}

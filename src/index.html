@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="@@ENDERECO_DO_CSS">
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="title">Sistema de cadastro de produtos</h1>
+        </div>
+    </header>
+    <main>
+        <section class="product-register">
+            <div class="container">
+                <h2 class="section-title">Adicionar novo produto</h2>
+                <form action="#" class="form">
+                    <div class="input-container">
+                        <label for="url">URL da imagem</label>
+                        <input type="text" id="url" name="url">
+                    </div>
+                    <div class="input-container">
+                        <label for="category">Categoria</label>
+                        <input type="text" id="category" name="categoria">
+                    </div>
+                    <div class="input-container">
+                        <label for="product">Nome do produto</label>
+                        <input type="text" id="product" name="produto">
+                    </div>
+                    <div class="input-container">
+                        <label for="price">Preço do produto</label>
+                        <input type="text" id="price" name="pice">
+                    </div>
+                    <div class="input-container">
+                        <label for="desrciption">Descrição do produto</label>
+                        <textarea name="descrição" id="description" cols="30" rows="10"></textarea>
+                    </div>
+                    <button type="submit">Adicionar produto</button>
+                </form>
+            </div>
+        </section>
+        <section class="product-view">
+            <div class="container">
+                <h2 class="section-title">Lista de produtos</h2>
+                <div class="product-container">
+                    <div data-categoria="skate" class="product">
+                        <img class="product-img" src="https://cdn.pixabay.com/photo/2018/09/26/00/46/skateboard-3703567_1280.jpg" alt="skate">
+                        <h4 class="product-name">Nome do produto</h4>
+                        <span class="product-price">R$100,00</span>
+                        <p class="product-description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reprehenderit enim
+                            expedita, ut, quae eveniet excepturi praesentium cupiditate dignissimos voluptatum iusto ab
+                            laudantium. Nam quaerat animi dignissimos accusamus minima harum?
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
