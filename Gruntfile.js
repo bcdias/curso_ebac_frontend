@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-            production: {
+            dist: {
                 options: {
                     patterns: [
                         {
@@ -87,12 +87,13 @@ module.exports = function (grunt) {
             }
         },
 
-        clean: ['prebuild'],
+        clean: ['prebuild', 'dist/scripts/ciraCard.min.js'],
 
         uglify: {
             target: {
                 files: {
-                    'dist/scripts/main.min.js': 'src/scripts/main.js'
+                    'dist/scripts/main.min.js': 'src/scripts/main.js',
+                    'dist/scripts/criaCard.js': 'src/scripts/criaCard.js',
                 }
             }
         }
