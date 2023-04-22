@@ -24,26 +24,26 @@
         <section class="product-register">
             <div class="container">
                 <h2 class="section-title">Adicionar novo produto</h2>
-                <form action="#" class="form">
+                <form action="#" class="form" data-form>
                     <div class="input-container">
                         <label for="url">URL da imagem</label>
-                        <input type="text" id="url" name="url">
+                        <input data-input="url" type="text" id="url" name="url">
                     </div>
                     <div class="input-container">
                         <label for="category">Categoria</label>
-                        <input type="text" id="category" name="categoria">
+                        <input data-input="category" type="text" id="category" name="categoria">
                     </div>
                     <div class="input-container">
-                        <label for="product">Nome do produto</label>
-                        <input type="text" id="product" name="produto">
+                        <label for="name">Nome do produto</label>
+                        <input data-input="name" type="text" id="name" name="nome">
                     </div>
                     <div class="input-container">
                         <label for="price">Preço do produto</label>
-                        <input type="text" id="price" name="pice">
+                        <input data-input="price" type="text" id="price" name="pice">
                     </div>
                     <div class="input-container">
                         <label for="desrciption">Descrição do produto</label>
-                        <textarea name="descrição" id="description" cols="30" rows="10"></textarea>
+                        <textarea data-input="description" name="descrição" id="description" cols="30" rows="10"></textarea>
                     </div>
                     <button type="submit">Adicionar produto</button>
                 </form>
@@ -52,22 +52,13 @@
         <section class="product-view">
             <div class="container">
                 <h2 class="section-title">Lista de produtos</h2>
-                <div class="product-container">
-                    <div data-categoria="skate" class="product">
-                        <img class="product-img" src="https://cdn.pixabay.com/photo/2018/09/26/00/46/skateboard-3703567_1280.jpg" alt="skate">
-                        <h4 class="product-name">Nome do produto</h4>
-                        <span class="product-price">R$100,00</span>
-                        <p class="product-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reprehenderit enim
-                            expedita, ut, quae eveniet excepturi praesentium cupiditate dignissimos voluptatum iusto ab
-                            laudantium. Nam quaerat animi dignissimos accusamus minima harum?
-                        </p>
-                    </div>
-
+                <div data-list="cards" class="product-container">
+                    <!-- Adicinoar cards de forma dinâmica aqui -->
                 </div>
             </div>
         </section>
     </main>
+    <script type="module" src="@@ENDERECO_DO_JS"></script>
 </body>
 
 </html>
