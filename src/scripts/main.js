@@ -1,4 +1,4 @@
-import criaCard from "./criaCard.js";
+import createCard from "@@CREATECARD_JS";
 
 const formulario = document.querySelector('[data-form]');
 
@@ -16,7 +16,7 @@ formulario.addEventListener('submit', (e) => {
     let cardsContainer = document.querySelector('[data-list="cards"')
 
 
-    const card = criaCard(url, category, productName, price, description)
+    const card = createCard(url, category, productName, price, description)
 
     cardsContainer.appendChild(card)
 

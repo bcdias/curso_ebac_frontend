@@ -1,4 +1,4 @@
-function criaCard(url, category, name, price, description) {
+function createCard(url, category, name, price, description) {
     
     const card = document.createElement("div")
     card.classList.add("product")
@@ -36,4 +36,4 @@ function criaCard(url, category, name, price, description) {
     return card
 }
 
-export default criaCard
+export default createCard

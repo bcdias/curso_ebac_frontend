@@ -25,6 +25,11 @@ module.exports = function (grunt) {
             html: {
                 files: ['src/index.html'],
                 tasks: ['replace:dev']
+            },
+            scripts:{
+                files: ['src/scripts/*.js'],
+                tasks: ['replace:dev']
+                
             }
         },
 
@@ -33,12 +38,16 @@ module.exports = function (grunt) {
                 options: {
                     patterns: [
                         {
-                            match: 'ENDERECO_DO_CSS',
+                            match: 'CSS_ADDRESS',
                             replacement: './styles/main.css'
                         },
                         {
-                            match: 'ENDERECO_DO_JS',
-                            replacement: '../src/scripts/main.js'
+                            match: 'JS_ADDRESS',
+                            replacement: './scripts/main.js'
+                        },
+                        {
+                            match: 'CREATECARD_JS',
+                            replacement: './createCard.js'
                         }
                     ]
                 },
@@ -48,6 +57,18 @@ module.exports = function (grunt) {
                         flatten: true,
                         src: ['src/index.html'],
                         dest: 'dev/'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['src/scripts/main.js'],
+                        dest: 'dev/scripts'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['src/scripts/createCard.js'],
+                        dest: 'dev/scripts'
                     }
                 ]
             },
@@ -55,13 +76,18 @@ module.exports = function (grunt) {
                 options: {
                     patterns: [
                         {
-                            match: 'ENDERECO_DO_CSS',
+                            match: 'CSS_ADDRESS',
                             replacement: './styles/main.min.css'
                         },
                         {
-                            match: 'ENDERECO_DO_JS',
+                            match: 'JS_ADDRESS',
                             replacement: './scripts/main.min.js'
+                        },
+                        {
+                            match: 'CREATECARD_JS',
+                            replacement: './createCard.min.js'
                         }
+
                     ]
                 },
                 files: [
@@ -70,6 +96,12 @@ module.exports = function (grunt) {
                         flatten: true,
                         src: ['prebuild/index.html'],
                         dest: 'dist/'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['prebuild/scripts/main.min.js'],
+                        dest: 'dist/scripts'
                     }
                 ]
             }
@@ -87,16 +119,17 @@ module.exports = function (grunt) {
             }
         },
 
-        clean: ['prebuild', 'dist/scripts/ciraCard.min.js'],
-
         uglify: {
             target: {
                 files: {
-                    'dist/scripts/main.min.js': 'src/scripts/main.js',
-                    'dist/scripts/criaCard.js': 'src/scripts/criaCard.js',
+                    'prebuild/scripts/main.min.js': 'src/scripts/main.js',
+                    'dist/scripts/createCard.min.js': 'src/scripts/createCard.js',
                 }
             }
-        }
+        },
+
+        clean: ['prebuild']
+
 
     })
 
@@ -108,5 +141,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify'])
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'uglify', 'replace:dist', 'clean'])
 }
